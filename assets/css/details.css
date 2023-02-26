@@ -1,0 +1,37 @@
+#details-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sec-div{
+    display: flex;
+    flex-direction: column;
+    
+}
+.cat-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.dates-info{
+    display: flex;
+   margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.div-date{
+    width: 120px;
+    height: 120px;
+    background-color: aquamarine;
+    border: 1px solid lightgray;
+}
+.dates-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}

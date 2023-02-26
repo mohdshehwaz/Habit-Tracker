@@ -5,10 +5,22 @@
         <input type="text" name="habit" placeholder="Enter Habit" required>
         <input type="submit" value="Add" class="login_button">
     </form>
-    <div id="switch-habits">
-
+    <div id="total-habits">
+        <% if(habits.length>0){%>
+            <% for(habit of habits){%>
+                <div class="habit">
+                    <h1><%=habit.name%></h1>
+                    <div class="habit-details">
+                        <h4>Category : <%= habit.category%></h4>
+                        <span><strong>Count : </strong><%=habit.count%>/7</span>
+                        <a href="/habit/delete/<%=habit.id%>"><i class="fa-solid fa-trash"></i></a>
+                        <a class="details-link" href="/habit/details/<%=habit.id%>">Details</a>
+                    </div>
+                </div>
+            <%}
+            %>
+        <%}
+        %>
     </div>
-    <div>
-        
-    </div>
+    
 </div>

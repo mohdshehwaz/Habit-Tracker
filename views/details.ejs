@@ -1,0 +1,60 @@
+<div id="details-main">
+    <h1 style="color: white;">Details of a Particular Habit</h1>
+    <h1 style="color: white;" >Name : <%= habit.name%></h1>
+    <div class="sec-div">
+        <div class="cat-div">
+            <h4 style="color: yellow;">Category : <%= habit.category%></h4>
+            <span style="color: yellow;"><strong>Count : </strong><%=habit.count%>/7</span>
+        </div>
+        <div class="dates-info">
+            <%  for(date of habit.dates) {%>
+                <div class="div-date">
+                    <div>
+                        <p style="font-weight: 600;"><%= date.day%></p>
+                        <p><%= date.date%></p>
+                    </div>
+                    
+                    <div class="dates-icon">
+                        <% if (date.complete =="yes"){ %>
+                            <a href="/habit/<%= habit.id %>/<%= date.id %>/update/?status=no"><i class="fa-solid fa-circle-check"></i></a>
+                            
+                            <% }else if(date.complete == "no"){ %>
+                                
+                                <a href="/habit/<%= habit.id %>/<%= date.id %>/update/?status=none"><i class="fa-solid fa-circle-xmark"></i></a>
+
+                                <% }else{ %>
+                                    <a href="/habit/<%= habit.id %>/<%= date.id %>/update/?status=yes"><i class="fa-solid fa-minus"></i></a>  
+                        <% } %>
+    
+                        <!-- <% if (date.complete =="no"){ %>
+                            <a href="/habit/<%= habit.id%>/<%= date.id %>/update/?status=none"><i class="fa-solid fa-circle-xmark"></i></a>
+                            
+                            <% }else{ %>
+                                <a href="/habit/<%= habit.id%>/<%= date.id %>/update/?status=no"><i class="fa-regular fa-circle-xmark"></i></a>
+                                
+                    
+                        <% } %>
+    
+                        <% if (date.complete =="none"){ %>
+                            <a href="/habit/<%= habit.id%>/<%= date.id %>/update/?status=none"><i class="fa-solid fa-circle-xmark"></i></a>
+                            
+                            <% }else{ %>
+                                <a href="/habit/<%= habit.id%>/<%= date.id %>/update/?status=none"><i class="fa-regular fa-circle-xmark"></i></a>
+                                
+                    
+                        <% } %> -->
+    
+                        
+                        
+                        
+    
+                    </div>
+                </div>
+            <%}
+            
+            %>
+        </div>
+
+    </div>
+    
+</div>

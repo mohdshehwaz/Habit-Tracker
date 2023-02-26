@@ -4,7 +4,12 @@ const habitSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,
-        unique:true
+        unique:false
+    },
+
+    count:{
+        type:Number,
+        default:0
     },
     category:{
         type:String,
@@ -21,7 +26,8 @@ const habitSchema = new mongoose.Schema({
     dates:[
         {
             date:String,
-            complete:String
+            complete:String,
+            day:String
         }
     ]
 

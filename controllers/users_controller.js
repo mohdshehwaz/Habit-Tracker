@@ -1,4 +1,7 @@
 const User = require('../models/user');
+const Habit = require('../models/habit');
+
+
 
 module.exports.profile = function(req, res){
     console.log("In the user profile page")
@@ -16,7 +19,7 @@ module.exports.signUp = function(req, res){
     if(req.isAuthenticated()){
         res.redirect('/users/profile');
     }
-
+    
     return res.render('user_sign_up', {
         title: "Codeial | Sign Up"
     })
@@ -59,9 +62,13 @@ module.exports.create_user =async (req,res) => {
     
 }
 module.exports.dashboard = async (req,res) => {
-    
+    const habits = await Habit.find({
+        user:req.user.id
+
+    })
     return res.render('dashboard', {
-        title: "Dashboard"
+        title: "Dashboard",
+        habits:habits
     });
 }
 module.exports.createSession = async (req,res) => {
